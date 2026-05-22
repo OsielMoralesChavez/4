@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4everUSB | Comunicación para Desarrolladores</title>
+    <meta name="description" content="Plataforma minimalista para estudiantes y docentes desarrolladores.">
+    <meta name="keywords" content="desarrollo, educación, comunicación, minimalismo">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="4everUSB">
+    <meta property="og:description" content="Conectando mentes de código.">
+    <meta property="twitter:title" content="4everUSB">
+    <meta property="twitter:description" content="Conectando mentes de código.">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="global.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer components {
+        .btn {
+            @apply px-4 py-2 rounded-[18px] font-bold transition-all duration-300 flex items-center justify-center gap-2;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            color: white;
+            box-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--primary-color);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--primary-color);
+        }
+        .btn-outline {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.05), 0 0 20px rgba(0,0,0,0.2);
+            @apply rounded-[25px] p-6 text-white;
+        }
+    }
+    </style>
+</head>
+<body>
+    <script src="utils/themeManager.js"></script>
+    <div id="root"></div>
+    <script type="text/babel" src="utils/mockData.js"></script>
+    <script type="text/babel" src="components/Icons.js"></script>
+    <script type="text/babel" src="components/Background.js"></script>
+    <script type="text/babel" src="components/Button.js"></script>
+    <script type="text/babel" src="components/Navbar.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>

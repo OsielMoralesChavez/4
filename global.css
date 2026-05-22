@@ -1,0 +1,64 @@
+body {
+    background: linear-gradient(135deg, var(--bg-color), var(--primary-color), var(--secondary-color));
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background: #000000 !important;
+    --bg-color: #000000;
+    --primary-color: #000000;
+    --secondary-color: #000000;
+}
+
+body.dark-mode .dark-mode-tendencias {
+    background: #000000 !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+/* Background Blobs */
+.bg-blobs-container {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.futuristic-blob-1 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.2;
+    top: -10%;
+    left: -10%;
+    animation: float 8s infinite ease-in-out;
+}
+
+.futuristic-blob-2 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    opacity: 0.2;
+    bottom: -10%;
+    right: -10%;
+    animation: float2 10s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(30px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes float2 {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0px); }
+}

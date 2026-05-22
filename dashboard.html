@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | 4everUSB</title>
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="global.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #213A5C;
+            --secondary-color: #586b84;
+            --accent-color: #3b82f6;
+            --bg-color: #F1F1F1;
+            --surface-color: #ffffff;
+            --border-color: #d1d5db;
+        }
+    }
+    @layer base {
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --primary-color: #93c5fd;
+            --surface-color: #1e293b;
+            --border-color: #334155;
+            color: #f9fafb;
+        }
+    }
+    @layer components {
+        .glass-component {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.05), 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        .btn {
+            @apply px-4 py-2 rounded-[18px] font-bold transition-all duration-300 flex items-center justify-center gap-2;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            color: white;
+            box-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--primary-color);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--primary-color);
+        }
+        .btn-outline {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .btn-ghost {
+            @apply text-white/70 hover:text-white hover:bg-white/10;
+        }
+        .card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 25px;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.05), 0 0 20px rgba(0,0,0,0.2);
+            @apply p-6 transition-all duration-300 text-white;
+        }
+        .dark-mode .card {
+            background: rgba(147, 197, 253, 0.05);
+            border-color: rgba(147, 197, 253, 0.15);
+        }
+        .tag {
+            @apply text-xs font-medium px-2 py-1 rounded-full bg-blue-500/10 text-blue-700;
+        }
+        .dark-mode .tag {
+            @apply text-blue-300 bg-blue-500/20;
+        }
+    }
+    </style>
+</head>
+<body class="relative min-h-screen transition-colors duration-300">
+    <script src="utils/themeManager.js"></script>
+    <div id="root"></div>
+    <script type="text/babel" src="utils/mockData.js"></script>
+    <script type="text/babel" src="components/Icons.js"></script>
+    <script type="text/babel" src="components/Background.js"></script>
+    <script type="text/babel" src="components/GlassUI.js"></script>
+    <script type="text/babel" src="components/Button.js"></script>
+    <script type="text/babel" src="components/Navbar.js"></script>
+    <script type="text/babel" src="components/PostCard.js"></script>
+    <script type="text/babel" src="dashboard-app.js"></script>
+</body>
+</html>

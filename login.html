@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | 4everUSB</title>
+    
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <link href="global.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer components {
+        .futuristic-phone {
+            width: 360px;
+            height: 720px;
+            border-radius: 35px;
+            padding: 20px;
+            position: relative;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 
+                0 0 25px var(--accent-color),
+                0 0 60px var(--primary-color);
+            overflow: hidden;
+            /* Adjust text color based on background luminance roughly, we'll force light text for glass */
+            color: #ffffff; 
+        }
+
+        .glass-card-inner {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow:
+                inset 0 0 10px rgba(255,255,255,0.05),
+                0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .futuristic-input {
+            width: 100%;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 15px;
+            border: none;
+            outline: none;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-size: 14px;
+        }
+
+        .futuristic-input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .futuristic-btn {
+            margin-top: 25px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 18px;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow:
+                0 0 15px var(--accent-color),
+                0 0 25px var(--primary-color);
+        }
+
+        .futuristic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow:
+                0 0 20px var(--accent-color),
+                0 0 40px var(--primary-color);
+        }
+
+        .bottom-nav-glass {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 70px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-item-glass {
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .nav-item-glass:hover, .nav-item-glass.active {
+            transform: scale(1.2);
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-color);
+        }
+    }
+    </style>
+</head>
+<body>
+    <script src="utils/themeManager.js"></script>
+    <div id="root"></div>
+    <script type="text/babel" src="components/Icons.js"></script>
+    <script type="text/babel" src="components/Background.js"></script>
+    <script type="text/babel" src="login-app.js"></script>
+</body>
+</html>
